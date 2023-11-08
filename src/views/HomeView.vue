@@ -1,9 +1,10 @@
-<script setup></script>
+<script setup>
+import HeroSection from "../components/HeroSection.vue";
+</script>
 
 <template>
-  <main
-    class="h-screen bg-[url('https://sxcontent9668.azureedge.us/cms-assets/assets/Flight_2_Homepage_Desktop_a3d65abd76.jpg')] bg-cover bg-center bg-no-repeat"
-  >
-    <h1 class="bg-red-500">HELLO WORLD!</h1>
-  </main>
+  <HeroSection />
+  <!-- <section
+    class="h-[85vh] bg-[url('https://sxcontent9668.azureedge.us/cms-assets/assets/Star6_27_110823_DSC_6211_desktop_f8580e1913.jpg')] bg-cover bg-center bg-no-repeat"
+  ></section> -->
 </template>
