@@ -6,26 +6,32 @@
       </RouterLink>
       <ul class="flex items-center gap-8 font-bold uppercase text-white">
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">Falcon 9</RouterLink>
+          <RouterLink
+            :to="{
+              name: 'vehicle',
+              params: { vehicle: vehicleData[0].vehicle },
+            }"
+            >Falcon 9</RouterLink
+          >
         </li>
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">Falcon Heavy</RouterLink>
+          <RouterLink to="/">Falcon Heavy</RouterLink>
         </li>
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">Dragon</RouterLink>
+          <RouterLink to="/">Dragon</RouterLink>
         </li>
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">Starship</RouterLink>
+          <RouterLink to="/">Starship</RouterLink>
         </li>
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">Human Spaceflight</RouterLink>
+          <RouterLink to="/">Human Spaceflight</RouterLink>
         </li>
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">Human Spaceflight</RouterLink>
+          <RouterLink to="/">Human Spaceflight</RouterLink>
         </li>
 
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/about">starshield</RouterLink>
+          <RouterLink to="/">starshield</RouterLink>
         </li>
       </ul>
     </nav>
@@ -34,4 +40,5 @@
 
 <script setup>
 import logo from "../assets/spacex.svg";
+import vehicleData from "../vehicleData.json";
 </script>
