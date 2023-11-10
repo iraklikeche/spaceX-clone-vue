@@ -27,10 +27,6 @@
           <RouterLink to="/">Human Spaceflight</RouterLink>
         </li>
         <li class="hover:border-b hover:border-white">
-          <RouterLink to="/">Human Spaceflight</RouterLink>
-        </li>
-
-        <li class="hover:border-b hover:border-white">
           <RouterLink to="/">starshield</RouterLink>
         </li>
       </ul>
