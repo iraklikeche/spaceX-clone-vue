@@ -7,7 +7,7 @@
       <div
         class="container mx-auto flex h-screen flex-col items-center justify-center gap-4"
       >
-        <h1 class="text-8xl font-bold text-white">
+        <h1 class="text-8xl font-bold uppercase text-white">
           {{ vehicle.vehicle.replace(/-/g, " ") }}
         </h1>
         <p class="text-xl text-white">
@@ -63,76 +63,48 @@
         <swiper-slide>
           <div class="flex h-screen w-full items-center justify-start px-24">
             <div class="flex flex-col items-start text-white">
-              <h3>{{ vehicle.vehicle.replace("-", " ") }}</h3>
-              <h2>Overview</h2>
-              <ul class="min-w-[30rem]">
-                <li class="flex justify-between border-b border-slate-700">
-                  <span>{{ vehicle.overview.param.name }}</span>
-                  <span>{{ vehicle.overview.param.size }}</span>
-                </li>
-                <li class="flex justify-between border-b border-slate-700">
-                  <span>{{ vehicle.overview.param_1.name }}</span>
-                  <span>{{ vehicle.overview.param_1.size }}</span>
-                </li>
-                <li class="flex justify-between border-b border-slate-700">
-                  <span>{{ vehicle.overview.param_2.name }}</span>
-                  <span>{{ vehicle.overview.param_2.mass }}</span>
-                </li>
-                <li class="flex justify-between border-b border-slate-700">
-                  <span>{{ vehicle.overview.param_3.name }}</span>
-                  <span>{{ vehicle.overview.param_3.mass }}</span>
-                </li>
-                <li class="flex justify-between border-b border-slate-700">
-                  <span>{{ vehicle.overview.param_4.name }}</span>
-                  <span>{{ vehicle.overview.param_4.mass }}</span>
-                </li>
-                <li class="flex justify-between border-b border-slate-700">
-                  <span>{{ vehicle.overview.param_5.name }}</span>
-                  <span>{{ vehicle.overview.param_5.mass }}</span>
+              <h3 class="text-2xl uppercase">
+                {{ vehicle.vehicle.replace("-", " ") }}
+              </h3>
+              <h2 class="text-6xl font-bold uppercase">Overview</h2>
+              <ul class="mt-12 min-w-[30rem]">
+                <li
+                  v-for="param in vehicle.params"
+                  class="flex items-center justify-between border-b border-slate-700 py-4"
+                >
+                  <span class="text-sm font-semibold uppercase">{{
+                    param.name
+                  }}</span>
+                  <span class="font-semibold">{{ param.size }}</span>
                 </li>
               </ul>
             </div>
             <img class="absolute -z-20" :src="vehicle.overviewBg" alt="" />
           </div>
         </swiper-slide>
-        <swiper-slide>
+        <swiper-slide v-for="stage in vehicle.stages">
           <div class="flex h-screen w-full items-center justify-start px-24">
             <div class="flex flex-col items-start text-white">
-              <h3>{{ vehicle.vehicle.replace("-", " ") }}</h3>
-              <h2>Overview</h2>
-              <p>{{ vehicle.first_stage.overview }}</p>
-              <span>{{ vehicle.first_stage.span }}</span>
+              <h3 class="text-xl uppercase">
+                {{ vehicle.vehicle.replace("-", " ") }}
+              </h3>
+              <h2 class="mb-12 text-6xl font-bold uppercase">
+                {{ stage.stage }}
+              </h2>
+              <p class="mb-8 w-1/2 text-left font-semibold">
+                {{ stage.overview }}
+              </p>
+              <span class="font-semibold" v-if="stage.span">{{
+                stage.span
+              }}</span>
+              <div v-if="stage.grid_fins" class="w-1/2 text-left">
+                <h4 class="mb-4 text-lg font-semibold uppercase">
+                  {{ grid_fins.replace("_", " ") }}
+                </h4>
+                <span class="font-semibold">{{ stage.grid_fins }}</span>
+              </div>
             </div>
-            <img class="absolute -z-20" :src="vehicle.overviewBg" alt="" />
-          </div>
-        </swiper-slide>
-        <swiper-slide class="flex flex-col gap-6">
-          <div class="flex h-screen w-full items-center justify-start px-24">
-            <div class="flex flex-col items-start text-white">
-              <h3>{{ vehicle.vehicle.replace("-", " ") }}</h3>
-              <h2>Overview</h2>
-              <p>{{ vehicle.interstage.overview }}</p>
-              <span>{{ vehicle.interstage.grid_fins }} </span>
-            </div>
-            <img
-              class="absolute -z-20"
-              :src="vehicle.interstage.overviewBg"
-              alt=""
-            />
-          </div>
-        </swiper-slide>
-        <swiper-slide class="flex flex-col gap-6">
-          <div class="flex h-screen w-full items-center justify-start px-24">
-            <div class="flex flex-col items-start text-white">
-              <h3>{{ vehicle.vehicle.replace("-", " ") }}</h3>
-              <h2>Overview</h2>
-              <p>{{ vehicle.second_stage.overview }}</p>
-            </div>
-            <img
-              class="absolute -z-20"
-              :src="vehicle.second_stage.overviewBg"
-              alt=""
-            />
+            <img class="absolute -z-20" :src="stage.overviewBg" alt="" />
           </div>
         </swiper-slide>
       </swiper>
@@ -163,29 +135,28 @@
     <section
       class="bg-black bg-[url('https://www.spacex.com/static/images/falcon-9/desktop/Merlin.jpg')] bg-cover bg-center bg-no-repeat"
     >
-      <div class="flex h-screen flex-col justify-center px-24">
+      <div class="flex h-screen w-3/4 flex-col justify-center px-24">
         <div class="flex w-1/2 flex-col items-start justify-center text-white">
-          <h2>Engine</h2>
-          <h2>Engine</h2>
-          <h2>Engine</h2>
-          <p class="font-medium text-white opacity-80">
-            Falcon 9 is a reusable, two-stage rocket designed and manufactured
-            by SpaceX for the reliable and safe transport of people and payloads
-            into Earth orbit and beyond. Falcon 9 is the world’s first orbital
-            class reusable rocket. Reusability allows SpaceX to refly the most
-            expensive parts of the rocket, which in turn drives down the cost of
-            space access.
+          <h2 class="text-lg font-semibold uppercase">Engines</h2>
+          <h2 class="mb-16 text-5xl font-bold uppercase">
+            {{ vehicle.engine.name }}
+          </h2>
+
+          <p class="mb-12 font-medium text-white opacity-80">
+            {{ vehicle.engine.desc }}
           </p>
         </div>
 
         <ul class="w-1/2 text-white">
-          <li class="flex justify-between border-b border-slate-700">
-            <span>1</span>
-            <span>2</span>
+          <li class="mb-4 flex justify-between border-b border-slate-700 pb-4">
+            <span class="font-bold uppercase">{{ engineParam[2] }}</span>
+            <span class="font-bold uppercase">{{
+              vehicle.engine.propellant
+            }}</span>
           </li>
-          <li class="flex justify-between border-b border-slate-700">
-            <span>1</span>
-            <span>2</span>
+          <li class="flex justify-between border-b border-slate-700 pb-4">
+            <span class="font-bold uppercase">{{ engineParam[3] }}</span>
+            <span class="font-bold uppercase">{{ vehicle.engine.thrust }}</span>
           </li>
         </ul>
       </div>
@@ -199,37 +170,15 @@
         :modules="modules"
         class="mySwiper relative"
       >
-        <swiper-slide>
+        <swiper-slide v-for="image in vehicle.images">
           <div class="flex h-screen w-full items-center justify-start">
-            <div class="flex w-1/2 flex-col items-start px-24 text-white">
-              <p class="px-12 text-xl font-semibold">
-                Falcon 9 launches Dragon to the international space station from
-                launch complex 39A
+            <div class="flex w-1/2 flex-col px-24 text-white">
+              <p class="balance px-12 text-2xl font-bold uppercase">
+                {{ image.desc }}
               </p>
             </div>
-            <img
-              class="absolute -z-20"
-              src="https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg"
-              alt=""
-            />
+            <img class="absolute -z-20" :src="image.imgURL" alt="" />
           </div>
-        </swiper-slide>
-        <swiper-slide class="flex flex-col gap-6">
-          <img
-            src="https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg"
-            alt=""
-          /> </swiper-slide
-        ><swiper-slide class="flex flex-col gap-6">
-          <img
-            src="https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg"
-            alt=""
-          />
-        </swiper-slide>
-        <swiper-slide class="flex flex-col gap-6">
-          <img
-            src="https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg"
-            alt=""
-          />
         </swiper-slide>
       </swiper>
     </section>
@@ -247,7 +196,11 @@ import vehicleData from "../vehicleData.json";
 const modules = [Navigation];
 
 const isHovered = ref(false);
-console.log(vehicleData);
+
+const engineParam = Object.keys(vehicleData[0].engine);
+
+const keys = Object.keys(vehicleData[0].stages[1]);
+const grid_fins = keys[3];
 
 // watch(isHovered, (newValue, oldValue) => {
 //   console.log("isHovered changed:", newValue);
@@ -255,6 +208,9 @@ console.log(vehicleData);
 </script>
 
 <style scoped>
+.balance {
+  text-wrap: balance;
+}
 .swiper {
   width: 100%;
   height: 100%;
