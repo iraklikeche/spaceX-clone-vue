@@ -5,7 +5,7 @@
       class="bg-cover bg-center bg-no-repeat"
     >
       <div
-        class="container mx-auto flex h-screen flex-col items-center justify-center gap-4"
+        class="container mx-auto flex h-screen flex-col items-center justify-center gap-4 pb-24"
       >
         <h1 class="text-8xl font-bold uppercase text-white">
           {{ spacecraft.vehicle.replace(/-/g, " ") }}
@@ -21,23 +21,29 @@
     <section class="bg-black">
       <div class="container mx-auto">
         <div class="flex justify-evenly py-24 text-white">
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold">{{
               spacecraft.totals.launches
             }}</span>
-            <span class="text-3xl font-light">TOTAL launches</span>
+            <span class="text-2xl font-light font-medium uppercase"
+              >TOTAL launches</span
+            >
           </div>
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold">{{
               spacecraft.totals.landings
             }}</span>
-            <span class="text-3xl font-light">TOTAL landings</span>
+            <span class="text-2xl font-light font-medium uppercase"
+              >TOTAL landings</span
+            >
           </div>
-          <div class="flex flex-col gap-4">
+          <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold">{{
               spacecraft.totals.re_flights
             }}</span>
-            <span class="text-3xl font-light">TOTAL relfights</span>
+            <span class="text-2xl font-light font-medium uppercase"
+              >TOTAL relfights</span
+            >
           </div>
         </div>
 

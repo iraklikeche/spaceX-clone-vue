@@ -103,103 +103,94 @@
   },
   {
     "id": 2,
-    "vehicle": "heavy falcon",
-    "vehicle_description": "foo",
-    "bg_url": "https://www.spacex.com/static/images/backgrounds/f9_feature.jpg",
-    "drawing": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Lines_Desktop.jpg",
+    "vehicle": "falcon heavy",
+    "vehicle_description": "OVER 5 MILLION LBS OF THRUST",
+    "bg_url": "https://www.spacex.com/static/images/backgrounds/fh_feature.jpg",
+    "drawing": "https://www.spacex.com/static/images/falcon-heavy/desktop/WebsiteFHFairings_Lines_Desktop.jpg",
     "totals": {
-      "launches": 111,
-      "landings": 222,
-      "re_flights": 333
+      "launches": 8,
+      "landings": 15,
+      "re_flights": 12
     },
-    "detailed_description": "foo.",
+    "detailed_description": "Falcon Heavy is composed of three reusable Falcon 9 nine-engine cores whose 27 Merlin engines together generate more than 5 million pounds of thrust at liftoff, equal to approximately eighteen 747 aircraft. As one of the world’s most powerful operational rockets, Falcon Heavy can lift nearly 64 metric tons (141,000 lbs) to orbit.",
     "params": [
       {
-        "name": "foo",
-        "size": "foo m"
+        "name": "height",
+        "size": "70 m"
       },
       {
-        "name": "foo",
-        "size": "3.7m"
+        "name": "width",
+        "size": "12.2m"
       },
       {
-        "name": "foo",
-        "size": "foo"
+        "name": "mass",
+        "size": "1,420,788 kg "
       },
       {
-        "name": "foo",
-        "size": "22,800 kg"
-      },
-      {
-        "name": "payload to gto",
-        "size": "8,300"
+        "name": "payload to leo",
+        "size": "63,800 kg "
       },
       {
         "name": "payload to gto",
-        "size": "4,020 kg"
+        "size": "26,700 kg "
+      },
+      {
+        "name": "payload to mars",
+        "size": "16,800 kg"
       }
     ],
 
-    "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Render_Desktop.jpg",
+    "overviewBg": "https://www.spacex.com/static/images/falcon-heavy/desktop/WebsiteFHS1_Render_Desktop.jpg",
     "stages": [
       {
-        "stage": "foo",
-        "overview": "foontaining liquid oxygen and rocket-grade kerosene (RP-1) propellant.",
-        "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Render_Desktop.jpg",
-        "span": "foo."
+        "stage": "first stage",
+        "overview": "Three cores make up the first stage of Falcon Heavy. The side cores, or boosters, are connected on the nosecone, the interstage, and on the octaweb. Shortly after liftoff the center core engines are throttled down. After the side cores separate, the center core engines throttle back up to full thrust.",
+        "overviewBg": "https://www.spacex.com/static/images/falcon-heavy/desktop/WebsiteFHS1_Render_Desktop.jpg"
       },
       {
-        "stage": "foo",
-        "overview": "The interstage is a composite structure that connects the first and second stages, and houses the pneumatic pushers that allow the first and second stage to separate during flight.",
-        "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Interstage_Render_Desktop.jpg",
-        "grid_fins": "Falcon 9 is equipped with four hypersonic grid fins positioned at the base of the interstage. They orient the rocket during reentry by moving the center of pressure."
+        "stage": "interstage",
+        "overview": "The interstage is a composite structure that connects the center core on the first stage and second stages and holds the release and separation system.",
+        "overviewBg": "https://www.spacex.com/static/images/falcon-heavy/desktop/WebsiteFHInterstage_Render_Desktop.jpg",
+        "grid_fins": "Falcon Heavy is equipped with 12 hypersonic grid fins, four on each booster, positioned at the base of the interstage or nosecone which orients by moving the center of pressure during reentry."
       },
       {
         "stage": "second stage",
-        "overview": "foodelivers Falcon 9’s payload to the desired orbit. The second stage engine ignites a few seconds after stage separation, and can be restarted multiple times to place multiple payloads into different orbits.",
-        "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9S2_Render_Desktop.jpg"
+        "overview": "Falcon Heavy draws upon Falcon 9’s proven design, which minimizes stage separation events and maximizes reliability. The second-stage Merlin Vacuum Engine delivers the rocket’s payload to orbit after the main engines cut off and the first-stage cores separate.",
+        "overviewBg": "https://www.spacex.com/static/images/falcon-heavy/desktop/WebsiteFHS2_Render_Desktop.jpg"
       }
     ],
 
     "payload": "foo",
     "engine": {
-      "name": "foo",
-      "desc": "foo",
-      "propellant": "foo",
-      "thrust": "foo kN"
+      "name": "merlin",
+      "desc": "Merlin is a family of rocket engines developed by SpaceX for use on its Falcon 1, Falcon 9 and Falcon Heavy launch vehicles. Merlin engines use RP-1 and liquid oxygen as rocket propellants in a gas-generator power cycle. The Merlin engine was originally designed for recovery and reuse.",
+      "propellant": "LOX",
+      "thrust": "845 kN"
     },
     "images": [
       {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg",
-        "desc": "foo"
+        "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_1.jpg",
+        "desc": "Falcon Heavy vertical at Kennedy Space Center  "
       },
       {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_1.jpg",
-        "desc": " foo"
+        "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_2.jpg",
+        "desc": "Falcon Heavy takes off from Pad 39A at Kennedy Space Center"
       },
       {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_2.jpg",
-        "desc": "foo"
+        "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_3.jpg",
+        "desc": "Falcon Heavy carries Arabsat-6A to orbit"
       },
       {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_3.jpg",
-        "desc": " foo"
+        "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_4.jpg",
+        "desc": "Falcon Heavy's side boosters land at LZ-1 and LZ-2 at Cape Canaveral"
       },
       {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_4.jpg",
-        "desc": " foo"
+        "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_5.jpg",
+        "desc": "Falcon Heavy lift off from Pad 39A at Kennedy Space Center"
       },
       {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_5.jpg",
-        "desc": "Falcon 9 leaves a trail of light as it lifts off from Vandenberg Air Force Base"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_8.jpg",
-        "desc": "Falcon 9 with its Radarsat payload at sunset before launch"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_9.jpg",
-        "desc": "Falcon 9 lands at Cape Canaveral"
+        "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_7.jpg",
+        "desc": "All 27 Merlin's engines lit on Falcon Heavy"
       }
     ]
   },
