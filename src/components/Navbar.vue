@@ -5,29 +5,14 @@
         <img :src="logo" />
       </RouterLink>
       <ul class="flex items-center gap-8 font-bold uppercase text-white">
-        <li class="hover:border-b hover:border-white">
-          <RouterLink
-            :to="{
-              name: 'vehicle',
-              params: { vehicle: vehicleData[0].vehicle },
-            }"
-            >Falcon 9</RouterLink
-          >
-        </li>
-        <li class="hover:border-b hover:border-white">
-          <RouterLink to="/">Falcon Heavy</RouterLink>
-        </li>
-        <li class="hover:border-b hover:border-white">
-          <RouterLink to="/">Dragon</RouterLink>
-        </li>
-        <li class="hover:border-b hover:border-white">
-          <RouterLink to="/">Starship</RouterLink>
-        </li>
-        <li class="hover:border-b hover:border-white">
-          <RouterLink to="/">Human Spaceflight</RouterLink>
-        </li>
-        <li class="hover:border-b hover:border-white">
-          <RouterLink to="/">starshield</RouterLink>
+        <li
+          class="hover:border-b hover:border-white"
+          v-for="vehicle in vehicleData"
+          :key="vehicle.id"
+        >
+          <RouterLink :to="`/vehicle/${vehicle.vehicle}`">{{
+            vehicle.vehicle.replace("-", " ")
+          }}</RouterLink>
         </li>
       </ul>
     </nav>
