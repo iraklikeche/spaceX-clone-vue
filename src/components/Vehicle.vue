@@ -18,32 +18,26 @@
 
     <!-- TOTALS SECTION-->
 
-    <section class="bg-black">
+    <section class="bg-black" v-if="spacecraft.totals">
       <div class="container mx-auto">
         <div class="flex justify-evenly py-24 text-white">
           <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold">{{
               spacecraft.totals.launches
             }}</span>
-            <span class="text-2xl font-light font-medium uppercase"
-              >TOTAL launches</span
-            >
+            <span class="text-2xl font-medium uppercase">TOTAL launches</span>
           </div>
           <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold">{{
               spacecraft.totals.landings
             }}</span>
-            <span class="text-2xl font-light font-medium uppercase"
-              >TOTAL landings</span
-            >
+            <span class="text-2xl font-medium uppercase">TOTAL landings</span>
           </div>
           <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold">{{
               spacecraft.totals.re_flights
             }}</span>
-            <span class="text-2xl font-light font-medium uppercase"
-              >TOTAL relfights</span
-            >
+            <span class="text-2xl font-medium uppercase">TOTAL relfights</span>
           </div>
         </div>
 
@@ -73,10 +67,13 @@
         <swiper-slide>
           <div class="flex h-screen w-full items-center justify-start px-24">
             <div class="flex flex-col items-start text-white">
-              <h3 class="text-2xl uppercase">
+              <h3 class="text-4xl uppercase">
                 {{ spacecraft.vehicle.replace("-", " ") }}
               </h3>
               <h2 class="text-6xl font-bold uppercase">Overview</h2>
+              <p v-if="spacecraft.sliderDesc" class="mt-8 w-2/5 text-left">
+                {{ spacecraft.sliderDesc }}
+              </p>
               <ul class="mt-12 min-w-[30rem]">
                 <li
                   v-for="param in spacecraft.params"
@@ -95,7 +92,7 @@
         <swiper-slide v-for="stage in spacecraft.stages">
           <div class="flex h-screen w-full items-center justify-start px-24">
             <div class="flex flex-col items-start text-white">
-              <h3 class="text-xl uppercase">
+              <h3 class="text-4xl uppercase">
                 {{ spacecraft.vehicle.replace("-", " ") }}
               </h3>
               <h2 class="mb-12 text-6xl font-bold uppercase">
@@ -120,10 +117,13 @@
       </swiper>
     </section>
 
+    <!-- VIDEO SECTION -->
+
     <section
       @mouseover="isHovered = true"
       @mouseleave="isHovered = false"
-      class="relative h-screen bg-[url('https://www.spacex.com/static/images/backgrounds/f9_video.jpg')] bg-cover bg-center bg-no-repeat px-24 text-white"
+      class="relative h-screen bg-cover bg-center bg-no-repeat px-24 text-white"
+      :style="{ backgroundImage: `url(${spacecraft.videoBg})` }"
     >
       <img
         :src="play"
@@ -131,7 +131,7 @@
         :class="{ 'scale-75  ': isHovered }"
       />
       <a
-        href="https://www.youtube.com/watch?v=Z4TXCZG_NEY&t=12s"
+        :href="spacecraft.videoURL"
         target="_blank"
         class="flex h-full items-end only:flex-col"
       >
@@ -142,8 +142,10 @@
       </a>
     </section>
 
+    <!-- ENGINE SECTION -->
     <section
-      class="bg-black bg-[url('https://www.spacex.com/static/images/falcon-9/desktop/Merlin.jpg')] bg-cover bg-center bg-no-repeat"
+      class="bg-black bg-cover bg-center bg-no-repeat"
+      :style="{ backgroundImage: `url(${spacecraft.engineURL})` }"
     >
       <div class="flex h-screen w-3/4 flex-col justify-center px-24">
         <div class="flex w-1/2 flex-col items-start justify-center text-white">
@@ -178,6 +180,7 @@
       </div>
     </section>
 
+    <!-- IMAGE SLIDER -->
     <section class="bg-black py-24">
       <swiper
         :slidesPerView="1"
@@ -216,7 +219,6 @@ const modules = [Navigation];
 const route = useRoute();
 const isHovered = ref(false);
 const spacecraft = ref(null);
-const engineParam = ref(null);
 
 console.log(route.params);
 

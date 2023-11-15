@@ -5,6 +5,8 @@
     "vehicle_description": "FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT",
     "bg_url": "https://www.spacex.com/static/images/backgrounds/f9_feature.jpg",
     "drawing": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Lines_Desktop.jpg",
+    "videoBg": "https://www.spacex.com/static/images/backgrounds/f9_video.jpg",
+    "videoURL": "https://www.youtube.com/watch?v=Z4TXCZG_NEY&t=12s",
     "totals": {
       "launches": 270,
       "landings": 228,
@@ -66,6 +68,7 @@
       "propellant": "LOX",
       "thrust": "845 kN"
     },
+    "engineURL": "https://www.spacex.com/static/images/falcon-9/desktop/Merlin.jpg",
     "images": [
       {
         "imgURL": "https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg",
@@ -107,6 +110,8 @@
     "vehicle_description": "OVER 5 MILLION LBS OF THRUST",
     "bg_url": "https://www.spacex.com/static/images/backgrounds/fh_feature.jpg",
     "drawing": "https://www.spacex.com/static/images/falcon-heavy/desktop/WebsiteFHFairings_Lines_Desktop.jpg",
+    "videoBg": "https://www.spacex.com/static/images/backgrounds/fh_video.jpg",
+    "videoURL": "https://www.youtube.com/watch?time_continue=11&v=A0FZIwabctw&embeds_widget_referrer=https%3A%2F%2Fwww.spacex.com%2Fvehicles%2Ffalcon-heavy%2F&embeds_referring_euri=https%3A%2F%2Fwww.spacex.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.spacex.com&source_ve_path=Mjg2NjY&feature=emb_logo",
     "totals": {
       "launches": 8,
       "landings": 15,
@@ -167,6 +172,7 @@
       "propellant": "LOX",
       "thrust": "845 kN"
     },
+    "engineURL": "https://www.spacex.com/static/images/falcon-9/desktop/Merlin.jpg",
     "images": [
       {
         "imgURL": "https://www.spacex.com/static/images/falcon-heavy/FH_1.jpg",
@@ -197,15 +203,193 @@
   {
     "id": 3,
     "vehicle": "dragon",
-    "vehicle_description": "FIRST ORBITAL CLASS ROCKET CAPABLE OF REFLIGHT",
-    "bg_url": "https://www.spacex.com/static/images/backgrounds/f9_feature.jpg",
+    "vehicle_description": "SENDING HUMANS AND CARGO INTO SPACE",
+    "bg_url": "https://www.spacex.com/static/images/backgrounds/dragon_feature.jpg",
+    "drawing": "https://www.spacex.com/static/images/dragon/desktop/DragonTrunk_Lines_Desktop.jpg",
+    "videoBg": "https://www.spacex.com/static/images/backgrounds/dragon_video.jpg",
+    "videoURL": "https://www.youtube.com/watch?v=78ATfCaBn6E&embeds_widget_referrer=https%3A%2F%2Fwww.spacex.com%2Fvehicles%2Fdragon%2F&embeds_referring_euri=https%3A%2F%2Fwww.spacex.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.spacex.com&source_ve_path=Mjg2NjY&feature=emb_logo",
+    "totals": {
+      "launches": 42,
+      "landings": 38,
+      "re_flights": 20
+    },
+    "detailed_description": "The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. It is the only spacecraft currently flying that is capable of returning significant amounts of cargo to Earth, and is the first private spacecraft to take humans to the space station.",
+    "params": [
+      {
+        "name": "height",
+        "size": "8.1 m"
+      },
+      {
+        "name": "diameter",
+        "size": "4 m"
+      },
+      {
+        "name": "capsule volume",
+        "size": "9.3 m³"
+      },
+      {
+        "name": "trunk volume",
+        "size": "37 m³"
+      },
+      {
+        "name": "launch payload mass",
+        "size": "6,000"
+      },
+      {
+        "name": "return payload mass",
+        "size": "3,000 kg"
+      }
+    ],
+
+    "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/DragonTrunk_Render_Desktop.jpg",
+    "stages": [
+      {
+        "stage": "trunk",
+        "overview": "Dragon’s trunk not only carries unpressurized cargo but also supports the spacecraft during ascent. One half of the trunk is covered in solar panels that provide power to Dragon during flight and while on-station. The trunk remains attached to Dragon until shortly before reentry into Earth’s atmosphere.",
+        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/Trunk_Render_Desktop.jpg",
+        "span": ""
+      },
+      {
+        "stage": "capsule",
+        "overview": "The Dragon capsule, also known as the pressurized section, allows for the transport of people as well as environmentally sensitive cargo. Dragon is equipped with Draco thrusters that allow Dragon to maneuver while on orbit and 8 SuperDracos that power the spacecraft’s launch escape system.",
+        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/Dragon_Render_Desktop.jpg",
+        "grid_fins": ""
+      }
+    ],
+
+    "payload": "",
+    "engine": {
+      "name": "draco",
+      "desc": "The Dragon spacecraft is equipped with 16 Draco thrusters used to orient the spacecraft during the mission, including apogee/perigee maneuvers, orbit adjustment and attitude control. Each Draco thruster is capable of generating 90 pounds of force in the vacuum of space.",
+      "propellant": "LOX",
+      "thrust": "400 N"
+    },
+    "engineURL": "https://www.spacex.com/static/images/dragon/desktop/Draco.jpg",
+    "images": [
+      {
+        "imgURL": "https://www.spacex.com/static/images/dragon/refresh/DRAGON_DM2_LC39A_3840x2560.jpg",
+        "desc": "Dragon on pad at Launch Complex 39A"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/dragon/refresh/DRAGON_DRAGON+F9_3840x2560.jpg",
+        "desc": "Dragon and Falcon 9 ready to launch at Launch complex 39A"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/dragon/refresh/DRAGON_DRAGON+ISS_3840x2025.jpg",
+        "desc": "Dragon approaching the International Space Station"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/dragon/refresh/DRAGON_CRS-22_3840x2560_Desktop.jpg",
+        "desc": "CRS-22 approaching the International Space Station"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/dragon/DR_6.jpg",
+        "desc": "Dragon is seen against the Earth's atmosphere"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_5.jpg",
+        "desc": "Falcon 9 leaves a trail of light as it lifts off from Vandenberg Air Force Base"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_8.jpg",
+        "desc": "Falcon 9 with its Radarsat payload at sunset before launch"
+      },
+      {
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_9.jpg",
+        "desc": "Falcon 9 lands at Cape Canaveral"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "vehicle": "starship",
+    "vehicle_description": "SERVICE TO EARTH ORBIT, MOON, MARS AND BEYOND",
+    "bg_url": "https://www.spacex.com/vehicles/starship/assets/images/Starhip_website-crop20230126_dji_0199_01.jpg",
+    "drawing": "https://www.spacex.com/static/images/dragon/desktop/DragonTrunk_Lines_Desktop.jpg",
+    "videoBg": "https://www.spacex.com/vehicles/starship/assets/images/capabilities/STARSHIP_CAPABILITIES_StarshipAnimation_Desktop.jpg",
+    "videoURL": "https://www.youtube.com/watch?time_continue=19&v=921VbEMAwwY&embeds_widget_referrer=https%3A%2F%2Fwww.spacex.com%2Fvehicles%2Fstarship%2F&embeds_referring_euri=https%3A%2F%2Fwww.spacex.com%2F&embeds_referring_origin=https%3A%2F%2Fwww.spacex.com&source_ve_path=Mjg2NjY&feature=emb_logo",
+    "sliderDesc": "SpaceX’s Starship spacecraft and Super Heavy rocket – collectively referred to as Starship – represent a fully reusable transportation system designed to carry both crew and cargo to Earth orbit, the Moon, Mars and beyond. Starship is the world’s most powerful launch vehicle ever developed, capable of carrying up to 150 metric tonnes fully reusable and 250 metric tonnes expendable.",
+    "detailed_description": "SpaceX’s Starship spacecraft and Super Heavy rocket – collectively referred to as Starship – represent a fully reusable transportation system designed to carry both crew and cargo to Earth orbit, the Moon, Mars and beyond. Starship is the world’s most powerful launch vehicle ever developed, capable of carrying up to 150 metric tonnes fully reusable and 250 metric tonnes expendable.",
+    "params": [
+      {
+        "name": "height",
+        "size": "121 m"
+      },
+      {
+        "name": "diameter",
+        "size": "9 m"
+      },
+
+      {
+        "name": "payload capacity",
+        "size": "100-150 t"
+      }
+    ],
+
+    "overviewBg": "    https://www.spacex.com/static/images/backgrounds/WebsiteStarshipStack_Render_Desktop.jpg",
+    "stages": [
+      {
+        "stage": "",
+        "overview": "Starship is the fully reusable sp  acecraft and second stage of the Starship system. The vehicle comes in several different configurations, offers an integrated payload section and is capable of carrying crew and cargo to Earth orbit, the Moon, Mars and beyond. Starship is also capable of point-to-point transport on Earth, enabling travel to anywhere in the world in one hour or less.",
+        "overviewBg": "https://www.spacex.com/vehicles/starship/assets/images/WebsiteStarship_Render_Desktop.jpg",
+        "span": ""
+      },
+      {
+        "stage": "superheavy",
+        "overview": "Super Heavy is the first stage, or booster, of the Starship launch system. Powered by 33 Raptor engines using sub-cooled liquid methane (CH4) and liquid oxygen (LOX), Super Heavy is fully reusable and will re-enter Earth’s atmosphere to land back at the launch site.",
+        "overviewBg": "https://www.spacex.com/static/images/backgrounds/WebsiteSuperHeavy_Render_Desktop.jpg",
+        "grid_fins": ""
+      }
+    ],
+
+    "payload": "Made of a carbon composite material, the fairing protects satellites on their way to orbit. The fairing is jettisoned approximately 3 minutes into flight, and SpaceX continues to recover fairings for reuse on future missions.",
+    "engine": {
+      "name": "merlin",
+      "desc": "Merlin is a family of rocket engines developed by SpaceX for use on its Falcon 1, Falcon 9 and Falcon Heavy launch vehicles. Merlin engines use a rocket grade kerosene (RP-1) and liquid oxygen as rocket propellants in a gas-generator power cycle. The Merlin engine was originally designed for recovery and reuse.",
+      "propellant": "LOX",
+      "thrust": "845 kN"
+    },
+
+    "images": [
+      {
+        "sliderHeader": "starship capabilities",
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg",
+        "desc": "As the most powerful launch system ever developed Starship will be able to carry up to 100 people on long duration, interplanetary flights."
+      },
+      {
+        "sliderHeader": "Payload delivery",
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_1.jpg",
+        "desc": "Starship is designed to deliver payloads farther and at a lower marginal cost per launch than our current Falcon vehicles."
+      },
+      {
+        "sliderHeader": "Moon missions",
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_2.jpg",
+        "desc": "Developing a Moon base to support future space exploration requires the transport of large amounts of cargo to the surface of the Moon."
+      },
+      {
+        "sliderHeader": "Interplanetary transportation",
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_3.jpg",
+        "desc": "Building cities on Mars will require affordable delivery of significant quantities of cargo and crew."
+      },
+      {
+        "sliderHeader": "Earth-To-Earth transportation ",
+        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_4.jpg",
+        "desc": "Imagine traveling to anywhere in the world in an hour or less. With Starship and Super Heavy, most international trips could be completed in under 30 minutes."
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "vehicle": "starshield",
+    "vehicle_description": "SENDING HUMANS AND CARGO INTO SPACE",
+    "bg_url": "https://www.spacex.com/static/images/backgrounds/dragon_feature.jpg",
     "drawing": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Lines_Desktop.jpg",
     "totals": {
-      "launches": 270,
-      "landings": 228,
-      "re_flights": 203
+      "launches": 42,
+      "landings": 38,
+      "re_flights": 20
     },
-    "detailed_description": "Falcon 9 is a reusable, two-stage rocket designed and manufactured by SpaceX for the reliable and safe transport  of people and payloads into Earth orbit and beyond. Falcon 9 is the world’s first orbital class  reusable rocket. Reusability allows SpaceX to refly the most expensive parts of the rocket,   which in turn drives down the cost of space access.",
+    "detailed_description": "The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. It is the only spacecraft currently flying that is capable of returning significant amounts of cargo to Earth, and is the first private spacecraft to take humans to the space station.",
     "params": [
       {
         "name": "height",
@@ -238,19 +422,19 @@
       {
         "stage": "first stage",
         "overview": "Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant.",
-        "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Render_Desktop.jpg",
+        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/DragonTrunk_Render_Desktop.jpg",
         "span": "Falcon 9 generates more than 1.7 million pounds of thrust at sea level."
       },
       {
         "stage": "interstage",
         "overview": "The interstage is a composite structure that connects the first and second stages, and houses the pneumatic pushers that allow the first and second stage to separate during flight.",
-        "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Interstage_Render_Desktop.jpg",
+        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/Trunk_Render_Desktop.jpg",
         "grid_fins": "Falcon 9 is equipped with four hypersonic grid fins positioned at the base of the interstage. They orient the rocket during reentry by moving the center of pressure."
       },
       {
         "stage": "second stage",
         "overview": "The second stage, powered by a single Merlin Vacuum Engine, delivers Falcon 9’s payload to the desired orbit. The second stage engine ignites a few seconds after stage separation, and can be restarted multiple times to place multiple payloads into different orbits.",
-        "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9S2_Render_Desktop.jpg"
+        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/Trunk_Render_Desktop.jpg"
       }
     ],
 
