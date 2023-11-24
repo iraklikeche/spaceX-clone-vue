@@ -343,6 +343,7 @@
     ],
 
     "payload": "Made of a carbon composite material, the fairing protects satellites on their way to orbit. The fairing is jettisoned approximately 3 minutes into flight, and SpaceX continues to recover fairings for reuse on future missions.",
+    "engineURL": "https://www.spacex.com/vehicles/starship/assets/images/Raptor_Desktop.jpg",
     "engine": {
       "name": "merlin",
       "desc": "Merlin is a family of rocket engines developed by SpaceX for use on its Falcon 1, Falcon 9 and Falcon Heavy launch vehicles. Merlin engines use a rocket grade kerosene (RP-1) and liquid oxygen as rocket propellants in a gas-generator power cycle. The Merlin engine was originally designed for recovery and reuse.",
@@ -375,108 +376,6 @@
         "sliderHeader": "Earth-To-Earth transportation ",
         "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_4.jpg",
         "desc": "Imagine traveling to anywhere in the world in an hour or less. With Starship and Super Heavy, most international trips could be completed in under 30 minutes."
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "vehicle": "starshield",
-    "vehicle_description": "SENDING HUMANS AND CARGO INTO SPACE",
-    "bg_url": "https://www.spacex.com/static/images/backgrounds/dragon_feature.jpg",
-    "drawing": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Lines_Desktop.jpg",
-    "totals": {
-      "launches": 42,
-      "landings": 38,
-      "re_flights": 20
-    },
-    "detailed_description": "The Dragon spacecraft is capable of carrying up to 7 passengers to and from Earth orbit, and beyond. It is the only spacecraft currently flying that is capable of returning significant amounts of cargo to Earth, and is the first private spacecraft to take humans to the space station.",
-    "params": [
-      {
-        "name": "height",
-        "size": "70 m"
-      },
-      {
-        "name": "diameter",
-        "size": "3.7m"
-      },
-      {
-        "name": "mass",
-        "size": "549,054 kg"
-      },
-      {
-        "name": "payload to leo",
-        "size": "22,800 kg"
-      },
-      {
-        "name": "payload to gto",
-        "size": "8,300"
-      },
-      {
-        "name": "payload to gto",
-        "size": "4,020 kg"
-      }
-    ],
-
-    "overviewBg": "https://www.spacex.com/static/images/falcon-9/desktop/WebsiteF9Fairings_Render_Desktop.jpg",
-    "stages": [
-      {
-        "stage": "first stage",
-        "overview": "Falcon 9’s first stage incorporates nine Merlin engines and aluminum-lithium alloy tanks containing liquid oxygen and rocket-grade kerosene (RP-1) propellant.",
-        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/DragonTrunk_Render_Desktop.jpg",
-        "span": "Falcon 9 generates more than 1.7 million pounds of thrust at sea level."
-      },
-      {
-        "stage": "interstage",
-        "overview": "The interstage is a composite structure that connects the first and second stages, and houses the pneumatic pushers that allow the first and second stage to separate during flight.",
-        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/Trunk_Render_Desktop.jpg",
-        "grid_fins": "Falcon 9 is equipped with four hypersonic grid fins positioned at the base of the interstage. They orient the rocket during reentry by moving the center of pressure."
-      },
-      {
-        "stage": "second stage",
-        "overview": "The second stage, powered by a single Merlin Vacuum Engine, delivers Falcon 9’s payload to the desired orbit. The second stage engine ignites a few seconds after stage separation, and can be restarted multiple times to place multiple payloads into different orbits.",
-        "overviewBg": "https://www.spacex.com/static/images/dragon/desktop/Trunk_Render_Desktop.jpg"
-      }
-    ],
-
-    "payload": "Made of a carbon composite material, the fairing protects satellites on their way to orbit. The fairing is jettisoned approximately 3 minutes into flight, and SpaceX continues to recover fairings for reuse on future missions.",
-    "engine": {
-      "name": "merlin",
-      "desc": "Merlin is a family of rocket engines developed by SpaceX for use on its Falcon 1, Falcon 9 and Falcon Heavy launch vehicles. Merlin engines use a rocket grade kerosene (RP-1) and liquid oxygen as rocket propellants in a gas-generator power cycle. The Merlin engine was originally designed for recovery and reuse.",
-      "propellant": "LOX",
-      "thrust": "845 kN"
-    },
-    "images": [
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg",
-        "desc": "Falcon 9 launches Dragon to the International Space Station from Launch Complex 39A"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_1.jpg",
-        "desc": "Falcon 9 first and second stages after separating in flight"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_2.jpg",
-        "desc": "Falcon 9 lifts off with its Iridium-5 payload"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_3.jpg",
-        "desc": "Falcon 9 lands on the droneship Just Read the instructions"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_4.jpg",
-        "desc": "Close-up of Falcon 9's Merlin engines during liftoff"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_5.jpg",
-        "desc": "Falcon 9 leaves a trail of light as it lifts off from Vandenberg Air Force Base"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_8.jpg",
-        "desc": "Falcon 9 with its Radarsat payload at sunset before launch"
-      },
-      {
-        "imgURL": "https://www.spacex.com/static/images/falcon-9/F9_9.jpg",
-        "desc": "Falcon 9 lands at Cape Canaveral"
       }
     ]
   }
