@@ -24,11 +24,16 @@
       <h1 class="text-5xl font-bold uppercase text-white">
         {{ launch.desc }}
       </h1>
-      <button
-        class="mt-4 min-w-[10rem] border-2 px-10 py-4 text-xs font-extrabold uppercase tracking-tight text-white"
+
+      <a
+        :href="launch.url"
+        target="_blank"
+        class="relative mt-4 flex min-w-[10rem] items-center justify-center border-2 px-10 py-4 text-xs font-extrabold uppercase tracking-tight text-white transition duration-1000 ease-in-out hover:text-black"
       >
-        {{ launch.reWatch ? "Watch" : "Learn More" }}
-      </button>
+        <span class="relative z-10">
+          {{ launch.reWatch ? "Watch" : "Learn More" }}
+        </span>
+      </a>
     </div>
   </section>
 </template>
@@ -36,3 +41,21 @@
 <script setup>
 import launches from "../data.json";
 </script>
+
+<style scoped>
+a::before {
+  content: "";
+  background: #fff;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: 0.3s ease-in-out;
+}
+
+a:hover::before {
+  width: 100%;
+}
+</style>

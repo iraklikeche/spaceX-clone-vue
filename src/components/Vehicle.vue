@@ -1,6 +1,6 @@
 <template>
   <main>
-    <section
+    <!-- <section
       :style="{ backgroundImage: `url(${spacecraft.bg_url})` }"
       class="bg-cover bg-center bg-no-repeat"
     >
@@ -14,7 +14,7 @@
           {{ spacecraft.vehicle_description }}
         </p>
       </div>
-    </section>
+    </section> -->
 
     <!-- TOTALS SECTION-->
 
@@ -22,21 +22,15 @@
       <div class="container mx-auto">
         <div class="flex justify-evenly py-24 text-white">
           <div class="flex flex-col items-center gap-4">
-            <span class="text-9xl font-semibold">{{
-              spacecraft.totals.launches
-            }}</span>
+            <span class="text-9xl font-semibold" ref="launch"></span>
             <span class="text-2xl font-medium uppercase">TOTAL launches</span>
           </div>
           <div class="flex flex-col items-center gap-4">
-            <span class="text-9xl font-semibold">{{
-              spacecraft.totals.landings
-            }}</span>
+            <span class="text-9xl font-semibold" ref="landing"></span>
             <span class="text-2xl font-medium uppercase">TOTAL landings</span>
           </div>
           <div class="flex flex-col items-center gap-4">
-            <span class="text-9xl font-semibold">{{
-              spacecraft.totals.re_flights
-            }}</span>
+            <span class="text-9xl font-semibold" ref="reFlight"></span>
             <span class="text-2xl font-medium uppercase">TOTAL relfights</span>
           </div>
         </div>
@@ -125,19 +119,21 @@
       class="relative h-screen bg-cover bg-center bg-no-repeat px-24 text-white"
       :style="{ backgroundImage: `url(${spacecraft.videoBg})` }"
     >
-      <img
-        :src="play"
-        class="absolute right-[50%] top-[50%] w-[50px] -translate-y-1/2 transition-all duration-500"
-        :class="{ 'scale-75  ': isHovered }"
-      />
       <a
         :href="spacecraft.videoURL"
         target="_blank"
-        class="flex h-full items-end only:flex-col"
+        class="flex h-full items-end"
       >
+        <img
+          :src="play"
+          class="absolute right-[50%] top-[50%] w-[50px] -translate-y-1/2 transition-all duration-500"
+          :class="{ 'scale-75  ': isHovered }"
+        />
         <div class="mb-24">
-          <span class="text-xl font-semibold">VIDEO</span>
-          <h2 class="text-4xl font-bold">VEHICLE IN MOTION</h2>
+          <span class="text-xl font-semibold uppercase">video</span>
+          <h2 class="text-4xl font-bold uppercase">
+            {{ spacecraft.vehicle.replace(/-/g, " ") }} in motion
+          </h2>
         </div>
       </a>
     </section>
@@ -210,19 +206,63 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import play from "../assets/play.svg";
-import { ref, watch } from "vue";
+import { ref, watch, onMounted } from "vue";
 import vehicleData from "../vehicleData.json";
 import { useRoute } from "vue-router";
+import anime from "animejs/lib/anime.es.js";
 
 const modules = [Navigation];
+const props = defineProps(["totalInfo"]);
 
 const route = useRoute();
 const isHovered = ref(false);
 const spacecraft = ref(null);
 
-console.log(route.params);
+const launch = ref(null);
+const landing = ref(null);
+const reFlight = ref(null);
 
-console.log(spacecraft);
+const totalInfo = vehicleData.map((item) => {
+  const totals = item.totals || {};
+  return {
+    id: item.id,
+    vehicle: item.vehicle,
+    launches: totals.launches || 0,
+    landings: totals.landings || 0,
+    reFlights: totals.reFlights || 0,
+  };
+});
+
+onMounted(() => {
+  updateAnime();
+});
+
+function updateAnime() {
+  if (spacecraft.value && spacecraft.value.totals) {
+    const { launches, landings, reFlights } = spacecraft.value.totals;
+
+    anime({
+      targets: launch.value,
+      innerHTML: [0, launches],
+      round: 1,
+      easing: "easeInOutExpo",
+    });
+    anime({
+      targets: landing.value,
+      innerHTML: [0, landings],
+      round: 1,
+      easing: "easeInOutExpo",
+    });
+    anime({
+      targets: reFlight.value,
+      innerHTML: [0, reFlights],
+      round: 1,
+      easing: "easeInOutExpo",
+    });
+
+    totalInfo.value = { launches, landings, reFlights };
+  }
+}
 
 watch(
   () => route.params.vehicle,
