@@ -250,11 +250,13 @@ const handleIntersection = (entries) => {
 
 // Setup Intersection Observer on component mount
 onMounted(() => {
-  observer.value = new IntersectionObserver(handleIntersection, {
-    threshold: 0.2,
-  });
+  if (targetElement.value) {
+    observer.value = new IntersectionObserver(handleIntersection, {
+      threshold: 0.2,
+    });
 
-  observer.value.observe(targetElement.value);
+    observer.value.observe(targetElement.value);
+  }
 });
 
 // Cleanup Intersection Observer on component unmount
