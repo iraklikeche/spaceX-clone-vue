@@ -1,6 +1,6 @@
 <template>
   <main>
-    <!-- <section
+    <section
       :style="{ backgroundImage: `url(${spacecraft.bg_url})` }"
       class="bg-cover bg-center bg-no-repeat"
     >
@@ -14,13 +14,13 @@
           {{ spacecraft.vehicle_description }}
         </p>
       </div>
-    </section> -->
+    </section>
 
     <!-- TOTALS SECTION-->
 
     <section class="bg-black" v-if="spacecraft.totals">
       <div class="container mx-auto">
-        <div class="flex justify-evenly py-24 text-white">
+        <div class="flex justify-evenly py-24 text-white" ref="targetElement">
           <div class="flex flex-col items-center gap-4">
             <span class="text-9xl font-semibold" ref="launch"></span>
             <span class="text-2xl font-medium uppercase">TOTAL launches</span>
@@ -206,7 +206,7 @@ import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import play from "../assets/play.svg";
-import { ref, watch, onMounted } from "vue";
+import { ref, watch, onMounted, onUnmounted } from "vue";
 import vehicleData from "../vehicleData.json";
 import { useRoute } from "vue-router";
 import anime from "animejs/lib/anime.es.js";
@@ -222,6 +222,9 @@ const launch = ref(null);
 const landing = ref(null);
 const reFlight = ref(null);
 
+const targetElement = ref(null);
+const observer = ref(null);
+
 const totalInfo = vehicleData.map((item) => {
   const totals = item.totals || {};
   return {
@@ -233,8 +236,32 @@ const totalInfo = vehicleData.map((item) => {
   };
 });
 
+// Callback function for Intersection Observer
+const handleIntersection = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log("Target element is in the viewport!");
+      updateAnime();
+    } else {
+      console.log("Target element is out of the viewport!");
+    }
+  });
+};
+
+// Setup Intersection Observer on component mount
 onMounted(() => {
-  updateAnime();
+  observer.value = new IntersectionObserver(handleIntersection, {
+    threshold: 0.2,
+  });
+
+  observer.value.observe(targetElement.value);
+});
+
+// Cleanup Intersection Observer on component unmount
+onUnmounted(() => {
+  if (observer.value) {
+    observer.value.disconnect();
+  }
 });
 
 function updateAnime() {
