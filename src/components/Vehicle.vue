@@ -7,10 +7,12 @@
       <div
         class="container mx-auto flex h-screen flex-col items-center justify-center gap-4 pb-24"
       >
-        <h1 class="text-8xl font-bold uppercase text-white">
+        <h1
+          class="text-6xl font-bold uppercase text-white sm:text-7xl lg:text-8xl"
+        >
           {{ spacecraft.vehicle.replace(/-/g, " ") }}
         </h1>
-        <p class="text-xl text-white">
+        <p class="text-white sm:text-lg lg:text-xl">
           {{ spacecraft.vehicle_description }}
         </p>
       </div>
@@ -19,27 +21,42 @@
     <!-- TOTALS SECTION-->
 
     <section class="bg-black" v-if="spacecraft.totals">
-      <div class="container mx-auto">
+      <div>
         <div class="flex justify-evenly py-24 text-white" ref="targetElement">
           <div class="flex flex-col items-center gap-4">
-            <span class="text-9xl font-semibold" ref="launch"></span>
-            <span class="text-2xl font-medium uppercase">TOTAL launches</span>
+            <span
+              class="text-6xl font-semibold sm:text-7xl lg:text-9xl"
+              ref="launch"
+            ></span>
+            <span class="text-lg font-medium uppercase sm:text-xl lg:text-2xl"
+              >TOTAL launches</span
+            >
           </div>
           <div class="flex flex-col items-center gap-4">
-            <span class="text-9xl font-semibold" ref="landing"></span>
-            <span class="text-2xl font-medium uppercase">TOTAL landings</span>
+            <span
+              class="text-6xl font-semibold sm:text-7xl lg:text-9xl"
+              ref="landing"
+            ></span>
+            <span class="text-lg font-medium uppercase sm:text-xl lg:text-2xl"
+              >TOTAL landings</span
+            >
           </div>
           <div class="flex flex-col items-center gap-4">
-            <span class="text-9xl font-semibold" ref="reFlight"></span>
-            <span class="text-2xl font-medium uppercase">TOTAL relfights</span>
+            <span
+              class="text-6xl font-semibold sm:text-7xl lg:text-9xl"
+              ref="reFlight"
+            ></span>
+            <span class="text-lg font-medium uppercase sm:text-xl lg:text-2xl"
+              >TOTAL reflights</span
+            >
           </div>
         </div>
 
         <div
-          class="flex h-screen bg-cover bg-center bg-no-repeat px-24"
+          class="flex h-screen bg-cover bg-center bg-no-repeat px-12 xl:px-24"
           :style="{ backgroundImage: `url(${spacecraft.drawing})` }"
         >
-          <div class="flex w-1/2 items-center justify-center">
+          <div class="flex w-3/4 items-center justify-center sm:w-1/2">
             <p class="font-medium text-white opacity-80">
               {{ spacecraft.detailed_description }}
             </p>
@@ -59,13 +76,18 @@
         class="mySwiper relative"
       >
         <swiper-slide>
-          <div class="flex h-screen w-full items-center justify-start px-24">
+          <div
+            class="flex h-screen w-full items-center justify-start px-12 xl:px-24"
+          >
             <div class="flex flex-col items-start text-white">
-              <h3 class="text-4xl uppercase">
+              <h3 class="text-3xl uppercase xl:text-4xl">
                 {{ spacecraft.vehicle.replace("-", " ") }}
               </h3>
-              <h2 class="text-6xl font-bold uppercase">Overview</h2>
-              <p v-if="spacecraft.sliderDesc" class="mt-8 w-2/5 text-left">
+              <h2 class="text-5xl font-bold uppercase xl:text-6xl">Overview</h2>
+              <p
+                v-if="spacecraft.sliderDesc"
+                class="mt-8 w-full text-left sm:w-1/2 xl:w-2/5"
+              >
                 {{ spacecraft.sliderDesc }}
               </p>
               <ul class="mt-12 min-w-[30rem]">
@@ -84,7 +106,9 @@
           </div>
         </swiper-slide>
         <swiper-slide v-for="stage in spacecraft.stages">
-          <div class="flex h-screen w-full items-center justify-start px-24">
+          <div
+            class="flex h-screen w-full items-center justify-start px-12 xl:px-24"
+          >
             <div class="flex flex-col items-start text-white">
               <h3 class="text-4xl uppercase">
                 {{ spacecraft.vehicle.replace("-", " ") }}
@@ -116,7 +140,7 @@
     <section
       @mouseover="isHovered = true"
       @mouseleave="isHovered = false"
-      class="relative h-screen bg-cover bg-center bg-no-repeat px-24 text-white"
+      class="relative h-screen bg-cover bg-center bg-no-repeat px-12 text-white xl:px-24"
       :style="{ backgroundImage: `url(${spacecraft.videoBg})` }"
     >
       <a
@@ -143,8 +167,12 @@
       class="bg-black bg-cover bg-center bg-no-repeat"
       :style="{ backgroundImage: `url(${spacecraft.engineURL})` }"
     >
-      <div class="flex h-screen w-3/4 flex-col justify-center px-24">
-        <div class="flex w-1/2 flex-col items-start justify-center text-white">
+      <div
+        class="flex h-screen flex-col justify-center px-12 lg:w-3/4 xl:px-24"
+      >
+        <div
+          class="flex w-3/4 flex-col items-start justify-center text-white sm:w-1/2"
+        >
           <h2 class="text-lg font-semibold uppercase">Engines</h2>
           <h2 class="mb-16 text-5xl font-bold uppercase">
             {{ spacecraft.engine.name }}
@@ -187,8 +215,10 @@
       >
         <swiper-slide v-for="image in spacecraft.images">
           <div class="flex h-screen w-full items-center justify-start">
-            <div class="flex w-1/2 flex-col px-24 text-white">
-              <p class="balance px-12 text-2xl font-bold uppercase">
+            <div class="flex w-1/2 flex-col text-white xl:px-24">
+              <p
+                class="balance text-lg font-bold uppercase sm:text-2xl xl:px-12"
+              >
                 {{ image.desc }}
               </p>
             </div>

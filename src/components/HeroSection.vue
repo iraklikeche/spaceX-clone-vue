@@ -2,26 +2,29 @@
   <section
     v-for="launch in launches"
     :key="launch.key"
-    class="h-screen bg-cover bg-center bg-no-repeat"
+    class="bg-cover bg-center bg-no-repeat px-8"
     :style="{ backgroundImage: `url(${launch.background})` }"
   >
-    <video
-      v-if="launch.video"
-      autoplay
-      muted
-      loop
-      id="myVideo"
-      class="absolute bottom-0 right-0 -z-10 aspect-video"
-    >
-      <source :src="launch.video" type="video/mp4" />
-    </video>
+    <div v-if="launch.video" class="">
+      <video
+        autoplay
+        muted
+        loop
+        id="myVideo"
+        class="absolute bottom-0 right-0 -z-10"
+      >
+        <source :src="launch.video" type="video/mp4" />
+      </video>
+    </div>
     <div
-      class="container mx-auto flex h-full flex-col items-start justify-end gap-4 px-24 pb-24"
+      class="container mx-auto flex h-screen flex-col items-start justify-end gap-2 pb-24 pl-12 sm:pl-0 lg:gap-4"
     >
-      <h2 class="text-3xl font-normal uppercase text-white">
+      <h2 class="text-2xl font-normal uppercase text-white md:text-3xl">
         {{ launch.launch }}
       </h2>
-      <h1 class="text-5xl font-bold uppercase text-white">
+      <h1
+        class="w-1/2 text-3xl font-semibold uppercase text-white md:text-4xl lg:text-5xl"
+      >
         {{ launch.desc }}
       </h1>
 

@@ -1,6 +1,6 @@
 <template>
   <header class="container relative mx-auto">
-    <nav class="absolute flex items-center justify-between px-24 py-8">
+    <nav class="absolute flex items-center justify-between px-8 py-8">
       <RouterLink to="/" class="block w-1/5">
         <img :src="logo" />
       </RouterLink>
