@@ -67,7 +67,7 @@
 
     <!-- OVERVIEW SECTION -->
 
-    <section class="bg-black py-24">
+    <section class="bg-black py-4 md:py-24">
       <swiper
         :slidesPerView="1"
         :spaceBetween="0"
@@ -205,7 +205,7 @@
     </section>
 
     <!-- IMAGE SLIDER -->
-    <section class="bg-black py-24">
+    <section class="bg-black py-4 md:py-24">
       <swiper
         :slidesPerView="1"
         :spaceBetween="0"

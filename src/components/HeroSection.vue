@@ -2,7 +2,7 @@
   <section
     v-for="launch in launches"
     :key="launch.key"
-    class="bg-cover bg-center bg-no-repeat px-8"
+    class="bg-cover bg-center bg-no-repeat px-8 xl:px-24"
     :style="{ backgroundImage: `url(${launch.background})` }"
   >
     <div v-if="launch.video" class="">
