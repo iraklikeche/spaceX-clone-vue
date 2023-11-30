@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main v-if="spacecraft">
     <section
       :style="{ backgroundImage: `url(${spacecraft.bg_url})` }"
       class="bg-cover bg-center bg-no-repeat"
@@ -228,6 +228,9 @@
       </swiper>
     </section>
   </main>
+  <div v-else>
+    <p>Vehicle not found</p>
+  </div>
 </template>
 
 <script setup>
@@ -238,13 +241,14 @@ import "swiper/css";
 import play from "../assets/play.svg";
 import { ref, watch, onMounted, onUnmounted } from "vue";
 import vehicleData from "../vehicleData.json";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import anime from "animejs/lib/anime.es.js";
 
 const modules = [Navigation];
 const props = defineProps(["totalInfo"]);
 
 const route = useRoute();
+const router = useRouter();
 const isHovered = ref(false);
 const spacecraft = ref(null);
 
@@ -327,6 +331,11 @@ watch(
   () => route.params.vehicle,
   (newVehicle) => {
     spacecraft.value = vehicleData.find((c) => c.vehicle === newVehicle);
+
+    if (!spacecraft.value) {
+      // Redirect to the not found page
+      router.push({ name: "NotFound" });
+    }
   },
   { immediate: true }, // Trigger the watcher immediately when the component is created
 );

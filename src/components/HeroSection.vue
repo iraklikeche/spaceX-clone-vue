@@ -17,7 +17,7 @@
       </video>
     </div>
     <div
-      class="container mx-auto flex h-screen flex-col items-start justify-end gap-2 pb-24 pl-12 sm:pl-0 lg:gap-4"
+      class="container mx-auto flex h-screen flex-col items-start justify-end gap-2 pb-24 pl-0 lg:gap-4"
     >
       <h2 class="text-2xl font-normal uppercase text-white md:text-3xl">
         {{ launch.launch }}
@@ -61,6 +61,7 @@ a::before {
 a:hover::before {
   width: 100%;
 }
+
 video {
   object-fit: cover;
   width: 100%;

@@ -4,7 +4,6 @@ import Footer from "./components/Footer.vue";
 </script>
 
 <template>
-  <Navbar />
   <RouterView v-slot="{ Component, route }">
     <transition name="fade" mode="out-in">
       <div :key="route.fullPath">
@@ -13,7 +12,6 @@ import Footer from "./components/Footer.vue";
     </transition>
   </RouterView>
   <!-- <RouterView /> -->
-  <Footer />
 </template>
 
 <style scoped>
