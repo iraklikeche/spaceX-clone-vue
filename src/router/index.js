@@ -18,16 +18,10 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: () => import("../views/VehicleView.vue"),
     },
-    // {
-    //   path: "/:pathMatch(.*)*",
-    //   name: "NotFound",
-    //   component: () => import("../views/NotFound.vue"),
-    // },.
     {
-      // Catch-all route for non-existing paths
       path: "/:pathMatch(.*)*",
       name: "NotFound",
-      component: NotFound,
+      component: () => import("../views/NotFound.vue"),
     },
   ],
   scrollBehavior(to, from, savedPosition) {
