@@ -5,7 +5,7 @@
     class="bg-cover bg-center bg-no-repeat px-8 xl:px-24"
     :style="{ backgroundImage: `url(${launch.background})` }"
   >
-    <div v-if="launch.video" class="">
+    <div v-if="launch.video" class="object-cover">
       <video
         autoplay
         muted
@@ -60,5 +60,10 @@ a::before {
 
 a:hover::before {
   width: 100%;
+}
+video {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 </style>

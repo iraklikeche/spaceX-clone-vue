@@ -18,7 +18,7 @@
         </svg>
       </div>
       <ul
-        class="absolute right-[-100%] top-0 flex h-screen w-1/2 flex-col items-start gap-4 overflow-hidden bg-[#0E0E0E] pl-12 font-bold uppercase text-white duration-500 ease-in-out lg:static lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:pl-0"
+        class="absolute right-[-100%] top-0 flex h-screen w-[60%] flex-col items-start gap-4 overflow-hidden bg-[#0E0E0E] pl-12 font-bold uppercase text-white duration-500 ease-in-out lg:static lg:h-auto lg:w-auto lg:flex-row lg:items-center lg:gap-8 lg:bg-transparent lg:pl-0"
         :class="{ 'right-[-20%]': isOpened }"
       >
         <div class="mb-6 mt-12 lg:hidden" @click="closeMenu">
