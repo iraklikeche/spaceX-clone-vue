@@ -1,7 +1,11 @@
 <template>
   <header class="container relative mx-auto">
     <nav class="absolute flex items-center justify-between px-8 py-8">
-      <RouterLink to="/" class="block w-1/5" @click="isOpened = false">
+      <RouterLink
+        :to="{ name: 'home' }"
+        class="block w-1/5"
+        @click="isOpened = false"
+      >
         <img :src="logo" />
       </RouterLink>
       <div class="lg:hidden">

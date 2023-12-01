@@ -228,9 +228,6 @@
       </swiper>
     </section>
   </main>
-  <div v-else>
-    <p>Vehicle not found</p>
-  </div>
 </template>
 
 <script setup>
@@ -241,7 +238,7 @@ import "swiper/css";
 import play from "../assets/play.svg";
 import { ref, watch, onMounted, onUnmounted } from "vue";
 import vehicleData from "../vehicleData.json";
-import { useRoute, useRouter } from "vue-router";
+import { useRoute, useRouter, onBeforeRouteLeave } from "vue-router";
 import anime from "animejs/lib/anime.es.js";
 
 const modules = [Navigation];
@@ -332,9 +329,10 @@ watch(
   (newVehicle) => {
     spacecraft.value = vehicleData.find((c) => c.vehicle === newVehicle);
 
-    if (!spacecraft.value) {
-      // Redirect to the not found page
-      router.push({ name: "NotFound" });
+    if (!spacecraft.value && newVehicle !== undefined) {
+      // Redirect to the not found page for non-existing vehicles
+      router.push({ name: 'NotFound' });
+      return; // Exit the function to avoid further processing
     }
   },
   { immediate: true }, // Trigger the watcher immediately when the component is created
